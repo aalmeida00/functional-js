@@ -12,15 +12,23 @@ const cart = [
   { name: 'iMac', qtty: 6, price: 4000 },
 ]
 
-const allProducts = cart.map(products => {
+const allProducts = cart.myMap(products => {
   let arr = products.name
   return arr
 })
 
-const stockValue = cart.map((products) => {
+const stockValue = cart.myMap((products) => {
   let arr = products.price * products.qtty
   return arr
 } )
 
 console.log(allProducts)
 console.log(stockValue)
+
+Array.prototype.myMap = function(fn) {
+  const mapped = []
+  for(let i=0; i< this.length; i++) {
+    mapped.push(fn(this[i], i, this))
+  }  
+  return mapped
+}
