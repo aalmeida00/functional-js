@@ -11,3 +11,16 @@ const cart = [
   { name: 'iPad', qtty: 2, price: 500 },
   { name: 'iMac', qtty: 6, price: 4000 },
 ]
+
+const allProducts = cart.map(products => {
+  let arr = products.name
+  return arr
+})
+
+const stockValue = cart.map((products) => {
+  let arr = products.price * products.qtty
+  return arr
+} )
+
+console.log(allProducts)
+console.log(stockValue)
